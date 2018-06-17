@@ -31,3 +31,8 @@ Sets contain elements uniquely. (The same element cannot be in the set more than
 * ```TreeSet```: Sorts in natural order
 Set operations like intersection, difference are implemented for sets (```retainAll```, ```removeAll```).
 
+## Queues
+FIFO list.
+* ```LinkedList``` also implements ```Queue``` interface
+* ```ArrayBlockingQueue``` has a fix size which can be specified in the constructor
+
