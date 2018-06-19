@@ -19,8 +19,10 @@ Basic rules of thumb for ```ArrayList``` and ```LinkedList```:
 * ```LinkedList```: this is based on doubly linked list data structure. If you want to add or remove items anywhere in the list, also in the middle, use ```LinkedList```. If you add items near the end of the list, ```ArrayList``` can be more efficient than ```LinkedList```. In ```LinkedList```, each element stores a reference to the previous and to the next element. To get an item at a particular index can be slower, because the list needs to iterate until that item. But adding an item anywhere is fast, because the links need to be changed, but shifting is not needed.
 * ```Vector```: it is very similar to ```ArrayList```. The main differences are: (1) ```Vector``` is synchronized, ```ArrayList``` is not; (2) handling of growth of the stored data.
 * ```Stack```: inherited from ```Vector```.
-> *Internally, both the* ```ArrayList``` *and* ```Vector``` *hold onto their contents using an* ```Array``` *. When an element is inserted into an* ```ArrayList``` *or a* ```Vector``` *, the object will need to expand its internal array if it runs out of room. A * ```Vector``` *defaults to doubling the size of its array, while the* ```ArrayList``` *increases its array size by 50 percent.*
-> *If multiple threads access an* ```ArrayList``` *concurrently then we must externally synchronize the block of code which modifies the list either structurally or simply modifies an element. Structural modification means addition or deletion of element(s) from the list. Setting the value of an existing element is not a structural modification.* 
+> *Internally, both the ```ArrayList``` and ```Vector``` hold onto their contents using an ```Array```. When an element is inserted into an ```ArrayList``` or a ```Vector```, the object will need to expand its internal array if it runs out of room. A ```Vector``` defaults to doubling the size of its array, while the ```ArrayList``` increases its array size by 50 percent.*
+>
+> *If multiple threads access an ```ArrayList``` concurrently then we must externally synchronize the block of code which modifies the list either structurally or simply modifies an element. Structural modification means addition or deletion of element(s) from the list. Setting the value of an existing element is not a structural modification.* 
+>
 > (https://stackoverflow.com/questions/2986296/what-are-the-differences-between-arraylist-and-vector)
 
 ## Maps
