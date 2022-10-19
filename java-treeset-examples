@@ -1,0 +1,102 @@
+import java.util.TreeSet;
+
+public class AccessTreeSetElementsExample {
+    public static void main(String[] args) {
+        TreeSet<String> students = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+
+        students.add("Julia");
+        students.add("Robert");
+        students.add("Mark");
+        students.add("Steven");
+
+        System.out.println("Students TreeSet : " + students);
+
+        // Finding the size of a TreeSet
+        System.out.println("Number of elements in the TreeSet : " + students.size());
+
+        // Check if an element exists in the TreeSet
+        String name = "Julia";
+        if(students.contains(name)) {
+            System.out.println("TreeSet contains the element : " + name);
+        } else {
+            System.out.println("TreeSet does not contain the element : " + name);
+        }
+
+        // Navigating through the TreeSet
+        System.out.println("First element : " + students.first());
+        System.out.println("Last element : " + students.last());
+
+        name = "Robert";
+        System.out.println("Element just greater than "  + name + " : " + students.higher(name));
+        System.out.println("Element just lower than "  + name + " : " + students.lower(name));
+
+    }
+}
+
+**************************************************************************************************************************************************************************
+
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+public class CreateTreeSetExample {
+    public static void main(String[] args) {
+        // Creating a TreeSet
+        SortedSet<String> fruits = new TreeSet<>();
+
+        // Adding new elements to a TreeSet
+        fruits.add("Banana");
+        fruits.add("Apple");
+        fruits.add("Pineapple");
+        fruits.add("Orange");
+
+        System.out.println("Fruits Set : " + fruits);
+
+        // Duplicate elements are ignored
+        fruits.add("Apple");
+        System.out.println("After adding duplicate element \"Apple\" : " + fruits);
+
+        // This will be allowed because it's in lowercase.
+        fruits.add("banana");
+        System.out.println("After adding \"banana\" : " + fruits);
+    }
+}
+
+************************************************************************************************************************************************************************
+
+import java.util.TreeSet;
+
+public class RemoveTreeSetElementsExample {
+    public static void main(String[] args) {
+        TreeSet<Integer> numbers = new TreeSet<>();
+
+        numbers.add(10);
+        numbers.add(15);
+        numbers.add(20);
+        numbers.add(25);
+        numbers.add(30);
+        numbers.add(42);
+        numbers.add(49);
+        numbers.add(50);
+
+        System.out.println("numbers TreeSet : " + numbers);
+
+        // Remove an element from the TreeSet
+        boolean isRemoved = numbers.remove(49);
+        if(isRemoved) {
+            System.out.println("After Removing 49 : " + numbers);
+        }
+
+        // Remove all elements divisible by 3
+        numbers.removeIf(number -> number % 3 == 0);
+        System.out.println("After removeIf() : " + numbers);
+
+
+        // Retrieve and remove the first element from the TreeSet
+        Integer num = numbers.pollFirst();
+        System.out.println("Removed first element " + num + " from the TreeSet : " + numbers);
+
+        // Retrieve and remove the last element from the TreeSet
+        num = numbers.pollLast();
+        System.out.println("Removed last element " + num + " from the TreeSet : " + numbers);
+    }
+}
